@@ -9,42 +9,52 @@ const App = () => {
   const [gender, setGender] = useState("");
   const [result, setResult] = useState(null);
 
-  const startAnalysis = (username) => {
-    if(typeof username !== "string") return;
+  const startAnalysis = (form) => {
+    const targetGender = gender === "male" ? "female" : "male";
+    const filteredUsers = users.filter((user) => user.gender === targetGender);
+    
+    const matchedUsers = filteredUsers.map((user) => {
+      let score = 0;
+ 
+      if (Math.abs(user.age - Number(form.age)) <= 3) {
+        score += 30;
+      }
 
-    const user = users.find((u) => u.username.toLowerCase() === username.toLowerCase());
+      if (user.city.toLowerCase() === form.city.toLowerCase()) {
+        score += 30;
+      }
 
-    if(!user) {
-      setResult({
-        username,
-        percent: 0
-      })
-      setStep(3);
-      return;
-    }
+      if (user.job.toLowerCase() === form.job.toLowerCase()) {
+        score += 40;
+      }
 
-    const percent = Math.floor(Math.random() * 40) + 60;
+      return {
+        ...user,
+        score,
+      }
+    })
+
+    const bestMatch = matchedUsers.sort((a, b) => b.score - a.score)[0];
 
     setResult({
-      username: user.username,
-      percent,
+      username: bestMatch.username,
+      percent: bestMatch.score,
     });
-
     setStep(3);
   }
 
   return (
     <div className='min-h-screen bg-gradient-to-br from-[#020617] to-[#0f172a]'>
       {step === 1 && (
-        <Register setStep={setStep} setGender={setGender}/>
+        <Register setStep={setStep} setGender={setGender} />
       )}
 
       {step === 2 && (
-        <StepTwo startAnalysis={startAnalysis}/>
+        <StepTwo startAnalysis={startAnalysis} />
       )}
 
       {step === 3 && (
-        <Result result={result}/>
+        <Result result={result} />
       )}
     </div>
   )
