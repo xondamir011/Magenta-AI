@@ -40,8 +40,8 @@ export default function Result({ result }) {
                 {username}
             </h2>
 
-            <p className="text-gray-400">
-                Moslik darajasi {percent < 50 ? "past" : "yaxshi"}.
+            <p className="text-gray-400 text-lg">
+                Moslik darajasi {percent < 50 ? "past" : "yaxshi", "o'rta"}.
             </p>
 
             <div className="flex justify-center items-center gap-12"> 

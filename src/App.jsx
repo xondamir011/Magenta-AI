@@ -12,16 +12,24 @@ const App = () => {
   const startAnalysis = (form) => {
     const targetGender = gender === "male" ? "female" : "male";
     const filteredUsers = users.filter((user) => user.gender === targetGender);
-    
+
     const matchedUsers = filteredUsers.map((user) => {
       let score = 0;
- 
+
       if (Math.abs(user.age - Number(form.age)) <= 3) {
-        score += 30;
+        score += 16;
       }
 
       if (user.city.toLowerCase() === form.city.toLowerCase()) {
         score += 30;
+      }
+
+      if (Math.abs(user.height - Number(form.height)) <= 10) {
+        score += 20;
+      }
+
+      if (Math.abs(user.salary - Number(form.salary)) <= 500) {
+        score += 10;
       }
 
       if (user.job.toLowerCase() === form.job.toLowerCase()) {

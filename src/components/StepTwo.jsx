@@ -22,7 +22,7 @@ export default function StepTwo({ startAnalysis }) {
             </h2>
 
             <input
-                placeholder="Yoshingiz"
+                placeholder="Yoshingizni kiriting"
                 type="number"
                 className="w-80 bg-[#0f172a] border border-white/10 rounded-xl p-3"
                 onChange={(e) =>
@@ -30,22 +30,20 @@ export default function StepTwo({ startAnalysis }) {
                         ...form,
                         age: e.target.value,
                     })
-                }
-            />
+                } />
 
             <input
-                placeholder="Shahar"
+                placeholder="Shahringizni kiriting"
                 className="w-80 bg-[#0f172a] border border-white/10 rounded-xl p-3"
                 onChange={(e) =>
                     setForm({
                         ...form,
                         city: e.target.value,
                     })
-                }
-            />
+                }/>
 
             <input
-                placeholder="Bo‘y"
+                placeholder="Bo‘yingizni kiriting"
                 type="number"
                 className="w-80 bg-[#0f172a] border border-white/10 rounded-xl p-3"
                 onChange={(e) =>
@@ -53,35 +51,30 @@ export default function StepTwo({ startAnalysis }) {
                         ...form,
                         height: e.target.value,
                     })
-                }
-            />
+                }/>
 
             <input
-                placeholder="Oylik Daromad"
+                placeholder="Oylik Daromadingiz"
                 className="w-80 bg-[#0f172a] border border-white/10 rounded-xl p-3"
                 onChange={(e) =>
                     setForm({
                         ...form,
                         salary: e.target.value,
                     })
-                }
-            />
+                }/>
 
             <input
-                placeholder="Kasbingiz"
+                placeholder="Kasbingizni kiriting"
                 className="w-80 bg-[#0f172a] border border-white/10 rounded-xl p-3"
                 onChange={(e) =>
                     setForm({
                         ...form,
                         job: e.target.value,
                     })
-                }
-            />
+                }/>
 
-            <button
-                onClick={handleClick}
-                className="mt-4 py-3 px-5 rounded-xl bg-gradient-to-r cursor-pointer from-purple-500 to-pink-500 hover:scale-105 transition-all"
-            >
+            <button onClick={handleClick}
+                className="mt-4 py-3 px-5 rounded-xl bg-gradient-to-r cursor-pointer from-purple-500 to-pink-500 hover:scale-105 transition-all">
                 ANALIZNI BOSHLASH
             </button>
 
