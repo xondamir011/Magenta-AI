@@ -35,14 +35,14 @@ export default function Result({ result }) {
           height="100%"
           viewBox="0 0 120 120"
           className="-rotate-90">
-            
+
           <circle
             cx={center}
             cy={center}
             r={radius}
             stroke="#1e293b"
             strokeWidth={stroke}
-            fill="none"/>
+            fill="none" />
 
           <circle
             cx={center}
@@ -56,7 +56,7 @@ export default function Result({ result }) {
             strokeDashoffset={
               circumference - (circumference * animatedPercent) / 100
             }
-            style={{ transition: "stroke-dashoffset .2s linear" }}/>
+            style={{ transition: "stroke-dashoffset .2s linear" }} />
 
           <defs>
             <linearGradient id="grad">
@@ -90,26 +90,26 @@ export default function Result({ result }) {
       {/* BAR */}
       <div className="w-full max-w-xs sm:max-w-sm h-3 sm:h-4 bg-white/10 rounded-full overflow-hidden">
         <div className="h-full rounded-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-1000"
-          style={{ width: `${animatedPercent}%` }}/>
+          style={{ width: `${animatedPercent}%` }} />
       </div>
 
       <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-5 w-full max-w-xs sm:max-w-md">
         <a href={`https://instagram.com/${username}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-50 sm:w-auto text-center mb-2 sm:mb-0 py-3 px-6 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 hover:scale-105 transition-all">
+          className="w-35 sm:w-auto text-center py-3 px-6 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 hover:scale-105 transition-all">
           Profilga o‘tish
         </a>
-
-        <a href="/"
-          className="w-50 sm:w-auto text-center py-3 px-6 rounded-xl bg-blue-900 hover:scale-105 transition-all">
-          Qaytish
-        </a>
       </div>
 
-      <div className="w-full max-w-md sm:max-w-xl mt-8 sm:mt-10 animate-slideUp">
+      <div className="w-full max-w-md sm:max-w-xl mt-8 sm:mt-10 animate-slideUp shadow-lg p-5 rounded-2xl bg-[#0f172a]/60">
         <Comments />
       </div>
+
+      <a href="/"
+        className="w-35 sm:w-auto text-center py-3 px-6 rounded-xl bg-blue-900 hover:scale-105 transition-all">
+        Qaytish
+      </a>
     </div>
   );
 }

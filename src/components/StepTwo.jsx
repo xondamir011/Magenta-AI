@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function StepTwo({ startAnalysis }) {
+export default function StepTwo({ setUserForm, setStep }) {
 
     const [form, setForm] = useState({
         age: "",
@@ -11,7 +11,8 @@ export default function StepTwo({ startAnalysis }) {
     });
 
     const handleClick = () => {
-        startAnalysis(form);
+        setUserForm(form);
+        setStep(3);
     };
 
     return (
@@ -22,7 +23,7 @@ export default function StepTwo({ startAnalysis }) {
             </h2>
 
             <input
-                placeholder="Yoshingizni kiriting"
+                placeholder="Yoshingiz"
                 type="number"
                 className="w-80 bg-[#0f172a] border border-white/10 rounded-xl p-3"
                 onChange={(e) =>
@@ -33,7 +34,7 @@ export default function StepTwo({ startAnalysis }) {
                 } />
 
             <input
-                placeholder="Shahringizni kiriting"
+                placeholder="Shahringiz"
                 className="w-80 bg-[#0f172a] border border-white/10 rounded-xl p-3"
                 onChange={(e) =>
                     setForm({
@@ -43,7 +44,7 @@ export default function StepTwo({ startAnalysis }) {
                 }/>
 
             <input
-                placeholder="Bo‘yingizni kiriting"
+                placeholder="Bo‘yingiz"
                 type="number"
                 className="w-80 bg-[#0f172a] border border-white/10 rounded-xl p-3"
                 onChange={(e) =>
@@ -53,8 +54,8 @@ export default function StepTwo({ startAnalysis }) {
                     })
                 }/>
 
-            <input
-                placeholder="Oylik Daromadingiz"
+            <input type="number"
+                placeholder="Oylik"
                 className="w-80 bg-[#0f172a] border border-white/10 rounded-xl p-3"
                 onChange={(e) =>
                     setForm({
@@ -64,7 +65,7 @@ export default function StepTwo({ startAnalysis }) {
                 }/>
 
             <input
-                placeholder="Kasbingizni kiriting"
+                placeholder="Kasbingiz"
                 className="w-80 bg-[#0f172a] border border-white/10 rounded-xl p-3"
                 onChange={(e) =>
                     setForm({
@@ -75,7 +76,7 @@ export default function StepTwo({ startAnalysis }) {
 
             <button onClick={handleClick}
                 className="mt-4 py-3 px-5 rounded-xl bg-gradient-to-r cursor-pointer from-purple-500 to-pink-500 hover:scale-105 transition-all">
-                ANALIZNI BOSHLASH
+                 Davom etish
             </button>
 
         </div>

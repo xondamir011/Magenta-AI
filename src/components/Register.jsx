@@ -7,21 +7,22 @@ const Register = ({ setStep, setGender }) => {
 
                 <div className="text-center">
                     <h2 className="text-2xl font-bold text-white">
-                     Magenta Master AI
+                        Magenta Master AI
                     </h2>
-
                     <p className="text-gray-400 text-sm mt-3">
-                      Kim bilan uchrashishingiz foizini yuqoriligin bilish
+                        Kim bilan uchrashishingiz foizini yuqoriligin bilish
                     </p>
                 </div>
 
                 <div className="flex flex-col gap-4">
-                    <button onClick={() => { setGender("boy"); setStep(2); }}
-                        className="py-3 rounded-xl cursor-pointer bg-gradient-to-r from-blue-900 to-sky-950 hover:scale-105 to-fuchsia-800 from-blue-800 transition-all font-semibold duration-300 border border-white/10">
-                        O'g'il bola 
+                    <button
+                        onClick={() => { setGender("male"); setStep(2); }}
+                        className="py-3 rounded-xl cursor-pointer bg-gradient-to-r from-blue-900 to-sky-950 hover:scale-105 transition-all font-semibold duration-300 border border-white/10">
+                        O'g'il bola
                     </button>
-                    
-                    <button onClick={() => { setGender("girl"); setStep(2); }}
+
+                    <button
+                        onClick={() => { setGender("female"); setStep(2); }}
                         className="py-3 rounded-xl cursor-pointer bg-gradient-to-r from-fuchsia-800 to-fuchsia-950 hover:scale-105 transition-all duration-300 font-semibold">
                         Qiz bola
                     </button>
