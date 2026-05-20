@@ -22,14 +22,12 @@ const Loading = ({ onDone }) => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#040a25] to-[#0a1435] px-5">
       <div className="flex flex-col items-center gap-8">
 
-        {/* Spinner */}
         <div style={{ position: "relative", width: 80, height: 80 }}>
           {/* Tashqi aylana */}
           <svg
             width="80" height="80"
             viewBox="0 0 80 80"
-            style={{ position: "absolute", inset: 0, animation: "spin 1.2s linear infinite" }}
-          >
+            style={{ position: "absolute", inset: 0, animation: "spin 1.2s linear infinite" }}>
             <circle
               cx="40" cy="40" r="34"
               fill="none"
@@ -37,8 +35,8 @@ const Loading = ({ onDone }) => {
               strokeWidth="4"
               strokeLinecap="round"
               strokeDasharray="160"
-              strokeDashoffset="60"
-            />
+              strokeDashoffset="60"/>
+
             <defs>
               <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#6366f1" />
@@ -62,7 +60,6 @@ const Loading = ({ onDone }) => {
           </div>
         </div>
 
-        {/* Matn */}
         <div className="text-center">
           <p className="text-white/80 text-base sm:text-lg font-medium leading-relaxed">
             Sun'iy intellekt ma'lumotlar
@@ -71,7 +68,6 @@ const Loading = ({ onDone }) => {
           </p>
         </div>
 
-        {/* CSS animatsiyalar */}
         <style>{`
           @keyframes spin {
             from { transform: rotate(0deg); }

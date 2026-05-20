@@ -21,10 +21,10 @@ const Ideal = ({ onNext }) => {
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     placeholder="Masalan: aqlli, chiroyli, sochi uzun..."
-                    className="textarea font-semibold textarea-bordered w-full h-36 sm:h-40 bg-[#0b1120] border-white/10 text-white focus:outline-none sm:text-base" />
+                    className="textarea font-semibold textarea-bordered w-full h-36 sm:h-40 bg-[#0b1120] border-white/10 text-white focus:outline-none" />
 
                 <button onClick={handleSubmit}
-                  className="btn mt-6 border-none text-white bg-gradient-to-r from-indigo-600 to-fuchsia-600 hover:scale-105 transition-all mx-auto block px-3 py-6 text-xs sm:px-6 sm:py-2 sm:text-base">
+                  className="btn mt-6 border-none text-white bg-gradient-to-r from-indigo-600 to-fuchsia-600 hover:scale-105 transition-all mx-auto block">
                     ANALIZNI BOSHLASH
                 </button>
 
