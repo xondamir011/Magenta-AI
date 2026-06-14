@@ -6,6 +6,8 @@ export default function Result({ result }) {
   const username = result?.username ?? "";
 
   const [animatedPercent, setAnimatedPercent] = useState(0);
+  const cleanUsername = encodeURIComponent(username.trim().replace("@", ""));
+
 
   useEffect(() => {
     let start = 0;
@@ -94,7 +96,7 @@ export default function Result({ result }) {
       </div>
 
       <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-5 w-full max-w-xs sm:max-w-md">
-        <a href={`https://instagram.com/${username}`}
+        <a href={`https://www.instagram.com/${cleanUsername}/`}
           target="_blank"
           rel="noopener noreferrer"
           className="w-35 sm:w-auto text-center py-3 px-6 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 hover:scale-105 transition-all">

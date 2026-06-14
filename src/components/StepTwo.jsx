@@ -23,7 +23,7 @@ export default function StepTwo({ setUserForm, setStep }) {
             </h2>
 
             <input
-                placeholder="Yoshingiz"
+                placeholder="Yoshi"
                 type="number"
                 className="w-80 bg-[#0f172a] border border-white/10 rounded-xl p-3"
                 onChange={(e) =>
@@ -34,7 +34,7 @@ export default function StepTwo({ setUserForm, setStep }) {
                 } />
 
             <input
-                placeholder="Shahringiz"
+                placeholder="Shahri"
                 className="w-80 bg-[#0f172a] border border-white/10 rounded-xl p-3"
                 onChange={(e) =>
                     setForm({
@@ -44,7 +44,7 @@ export default function StepTwo({ setUserForm, setStep }) {
                 }/>
 
             <input
-                placeholder="Bo‘yingiz"
+                placeholder="Bo‘yi"
                 type="number"
                 className="w-80 bg-[#0f172a] border border-white/10 rounded-xl p-3"
                 onChange={(e) =>
@@ -65,7 +65,7 @@ export default function StepTwo({ setUserForm, setStep }) {
                 }/>
 
             <input
-                placeholder="Kasbingiz"
+                placeholder="Kasbi"
                 className="w-80 bg-[#0f172a] border border-white/10 rounded-xl p-3"
                 onChange={(e) =>
                     setForm({
