@@ -14,14 +14,12 @@ const Ideal = ({ onNext }) => {
             <div className="w-full max-w-xl bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl shadow-2xl">
 
                 <h1 className="text-2xl sm:text-3xl leading-tight text-center font-bold text-white mb-6">
-                    Idealingizni tasvirlang
+                    Ideal juftlik
                 </h1>
 
-                <textarea
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
-                    placeholder="Masalan: aqlli, chiroyli, sochi uzun..."
-                    className="textarea font-semibold textarea-bordered w-full h-36 sm:h-40 bg-[#0b1120] border-white/10 text-white focus:outline-none" />
+                <textarea value={text} onChange={(e) => setText(e.target.value)}
+                  placeholder="Masalan: aqlli, chiroyli, sochi uzun..."
+                    className="textarea textarea-bordered w-full text-lg h-36 sm:h-40 bg-[#0b1120] border-white/10 text-white focus:outline-none"/>
 
                 <button onClick={handleSubmit}
                   className="btn mt-6 border-none text-white bg-gradient-to-r from-indigo-600 to-fuchsia-600 hover:scale-105 transition-all mx-auto block">

@@ -1,33 +1,58 @@
 import React from "react";
+import { FaMars, FaVenus } from "react-icons/fa";
 
 const Register = ({ setStep, setGender }) => {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#020617] to-[#0f172a] px-4">
-            <div className="w-full max-w-md bg-[#0f172a]/80 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-2xl flex flex-col gap-6">
+        <div className="min-h-screen flex flex-col items-center justify-center gap-6 sm:gap-8 bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#1e293b] px-4 py-6">
 
-                <div className="text-center">
-                    <h2 className="text-2xl font-bold text-white">
-                        Magenta Master AI
+            {/* Logo */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold animate-pulse bg-gradient-to-r from-fuchsia-500 to-cyan-400 bg-clip-text text-transparent text-center">
+                Magenta Master AI
+            </h1>
+
+            {/* Card */}
+            <div className="w-full max-w-sm sm:max-w-md bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 shadow-2xl p-5 sm:p-8">
+
+                {/* Description */}
+                <div className="text-center mb-6">
+                    <h2 className="text-white text-base sm:text-lg font-bold leading-relaxed">
+                        Tahlilni boshlash uchun kim haqida ma'lumot
+                        kiritmoqchi ekanligingizni tanlang
                     </h2>
-                    <p className="text-gray-400 text-sm mt-3">
-                        Kim bilan uchrashishingiz foizini yuqoriligin bilish
-                    </p>
                 </div>
 
-                <div className="flex flex-col gap-4">
-                    <button
-                        onClick={() => { setGender("male"); setStep(2); }}
-                        className="py-3 rounded-xl cursor-pointer bg-gradient-to-r from-blue-900 to-sky-950 hover:scale-105 transition-all font-semibold duration-300 border border-white/10">
-                        O'g'il bola
+                {/* Buttons */}
+                <div className="flex flex-col gap-4 sm:gap-5">
+
+                    <button onClick={() => {
+                            setGender("male");
+                            setStep(2);
+                        }}
+                        className="group rounded-2xl p-4 sm:p-5 cursor-pointer bg-gradient-to-r from-blue-700 to-sky-500 hover:scale-[1.03] active:scale-95 transition-all duration-300 shadow-lg">
+                            
+                        <div className="flex items-center justify-center gap-3">
+                            <FaMars className="text-2xl sm:text-3xl text-white" />
+                            <span className="text-base sm:text-lg font-bold text-white">
+                                O'g'il bola
+                            </span>
+                        </div>
                     </button>
 
-                    <button
-                        onClick={() => { setGender("female"); setStep(2); }}
-                        className="py-3 rounded-xl cursor-pointer bg-gradient-to-r from-fuchsia-800 to-fuchsia-950 hover:scale-105 transition-all duration-300 font-semibold">
-                        Qiz bola
+                    <button onClick={() => {
+                            setGender("female");
+                            setStep(2);
+                        }}
+                        className="group rounded-2xl p-4 sm:p-5 cursor-pointer bg-gradient-to-r from-pink-600 to-fuchsia-700 hover:scale-[1.03] active:scale-95 transition-all duration-300 shadow-lg">
+
+                        <div className="flex items-center justify-center gap-3">
+                            <FaVenus className="text-2xl sm:text-3xl text-white" />
+                            <span className="text-base sm:text-lg font-bold text-white">
+                                Qiz bola
+                            </span>
+                        </div>
                     </button>
+
                 </div>
-
             </div>
         </div>
     );
