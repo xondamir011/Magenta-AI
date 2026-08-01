@@ -16,19 +16,75 @@ const App = () => {
   const startAnalysis = (text) => {
     const targetGender = gender === "male" ? "female" : "male";
 
-    const filteredUsers = users.filter((user) => user.gender === targetGender);
+    const filteredUsers = users.filter(
+      (user) => user.gender === targetGender
+    );
 
     const matchedUsers = filteredUsers.map((user) => {
-      let score = Math.floor(Math.random() * 40) + 60;
+      let score = 20;
 
-      if (text.toLowerCase().includes(user.job.toLowerCase())) {
+      // Tavsif uzunligi
+      if (text.length >= 30) score += 10;
+      if (text.length >= 60) score += 10;
+
+      // Kasb mosligi
+      if (
+        text.toLowerCase().includes(user.job.toLowerCase()) ||
+        user.job.toLowerCase().includes(text.toLowerCase())
+      ) {
+        score += 20;
+      }
+
+      // Yosh mosligi
+      const ageDiff = Math.abs(
+        Number(user.age) - Number(userForm.age)
+      );
+
+      if (ageDiff <= 2) score += 20;
+      else if (ageDiff <= 5) score += 15;
+      else if (ageDiff <= 10) score += 10;
+      else score += 5;
+
+      // Shahar mosligi
+      if (
+        user.city &&
+        userForm.city &&
+        user.city.toLowerCase() === userForm.city.toLowerCase()
+      ) {
         score += 10;
       }
 
-      return { ...user, score };
+      // Daromad
+      if (Number(userForm.salary) > 5000000) score += 5;
+      if (Number(userForm.salary) > 10000000) score += 5;
+
+      // Kasb kiritilgan bo'lsa
+      if (
+        userForm.job &&
+        userForm.job.length > 3
+      ) {
+        score += 5;
+      }
+
+      // Tasodifiylik
+      score += Math.floor(Math.random() * 15);
+
+      // Limit
+      if (score > 95) score = 95;
+      if (score < 30) score = 30;
+
+      return {
+        ...user,
+        score,
+      };
     });
 
-    const bestMatch = matchedUsers.sort((a, b) => b.score - a.score)[0];
+    matchedUsers.sort((a, b) => b.score - a.score);
+
+    const topUsers = matchedUsers.slice(0, 5);
+
+    const bestMatch =
+      topUsers[Math.floor(Math.random() * topUsers.length)];
 
     setResult({
       username: bestMatch.username,

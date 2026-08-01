@@ -6,6 +6,7 @@ export default function Result({ result }) {
   const username = result?.username ?? "";
 
   const [animatedPercent, setAnimatedPercent] = useState(0);
+
   const cleanUsername = encodeURIComponent(
     username.trim().replace("@", "")
   );
@@ -36,10 +37,9 @@ export default function Result({ result }) {
           Tahlil Xulosasi
         </h1>
 
-        {/* CIRCLE */}
+        {/* Circle */}
         <div className="relative w-32 h-32 sm:w-40 sm:h-40 mb-6">
-          <svg
-            width="100%"
+          <svg width="100%"
             height="100%"
             viewBox="0 0 120 120"
             className="-rotate-90">
@@ -88,16 +88,16 @@ export default function Result({ result }) {
           </div>
         </div>
 
-        {/* USERNAME */}
+        {/* Username */}
         <h2 className="text-xl sm:text-3xl font-bold mb-3 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse break-all">
           {username}
         </h2>
 
-        {/* STATUS */}
-        <p className="text-sm sm:text-lg text-gray-300 mb-6 px-2">
+        {/* Status */}
+        <p className="text-sm sm:text-lg text-gray-300 mb-3 px-2">
           Moslik darajasi:
           <span className="font-bold ml-2 text-fuchsia-400">
-            {percent < 50
+            {percent < 40
               ? "Past 😕"
               : percent < 75
                 ? "O‘rta 🙂"
@@ -105,14 +105,91 @@ export default function Result({ result }) {
           </span>
         </p>
 
-        {/* BAR */}
-        <div className="w-full max-w-md h-3 sm:h-4 bg-white/10 rounded-full overflow-hidden mb-8">
-          <div className="h-full rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 transition-all duration-1000"
-            style={{ width: `${animatedPercent}%` }}/>
+        {/* Juftlik haqida */}
+        <div className="w-full max-w-md bg-white/5 border border-white/10 rounded-2xl p-5 mb-6">
+          <h3 className="text-lg font-bold mb-4 text-cyan-400">
+            Juftlik haqida
+          </h3>
+
+          <div className="grid grid-cols-2 gap-4 text-left">
+
+            <div>
+              <p className="text-gray-400 text-sm">
+                Yoshi
+              </p>
+              <p className="font-semibold">
+                {result?.age || "-"}
+              </p>
+            </div>
+
+            <div>
+              <p className="text-gray-400 text-sm">
+                Shahar
+              </p>
+              <p className="font-semibold">
+                {result?.city || "-"}
+              </p>
+            </div>
+
+            <div>
+              <p className="text-gray-400 text-sm">
+                Kasbi
+              </p>
+              <p className="font-semibold">
+                {result?.job || "-"}
+              </p>
+            </div>
+
+            <div>
+              <p className="text-gray-400 text-sm">
+                Bo'yi
+              </p>
+              <p className="font-semibold">
+                {result?.height || "-"} sm
+              </p>
+            </div>
+
+            <div>
+              <p className="text-gray-400 text-sm">
+                Daromadi
+              </p>
+              <p className="font-semibold">
+                {result?.salary || "-"}
+              </p>
+            </div>
+
+            <div>
+              <p className="text-gray-400 text-sm">
+                Moslik
+              </p>
+              <p className="font-semibold text-fuchsia-400">
+                {percent}%
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-5 p-4 rounded-xl bg-black/20 border border-white/10">
+            <p className="text-gray-300 leading-relaxed">
+              AI tahliliga ko‘ra sizning kiritgan talablaringiz
+              va ushbu insonning xususiyatlari o‘rtasida
+              ma'lum darajadagi moslik aniqlandi.
+              O‘zaro qiziqishlar, xarakter va hayot tarzi
+              jihatidan mos kelish ehtimoli mavjud.
+            </p>
+          </div>
         </div>
 
-        {/* BUTTONS */}
+        {/* Progress */}
+        <div className="w-full max-w-md h-3 sm:h-4 bg-white/10 rounded-full overflow-hidden mb-8">
+          <div className="h-full rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 transition-all duration-1000"
+            style={{
+              width: `${animatedPercent}%`,
+            }}/>
+        </div>
+
+        {/* Buttons */}
         <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-3 sm:gap-4 mb-8">
+
           <a href={`https://www.instagram.com/${cleanUsername}/`}
             target="_blank"
             rel="noopener noreferrer"
@@ -124,9 +201,10 @@ export default function Result({ result }) {
             className="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition-all">
             Qaytish
           </a>
+
         </div>
 
-        {/* COMMENTS */}
+        {/* Comments */}
         <div className="w-full bg-black/20 rounded-2xl border border-white/10 p-4 sm:p-5">
           <Comments />
         </div>
